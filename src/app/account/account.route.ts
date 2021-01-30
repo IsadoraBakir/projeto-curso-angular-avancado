@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ContaAppComponent } from './conta.app.component';
+import { ContaAppComponent } from './account.app.component';
 import { LoginComponent } from './login/login.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { RegisterComponent } from './register/register.component';
 
 const contaRouterConfig: Routes = [
     {
         path: '', component: ContaAppComponent,
         children: [
-            { path: 'cadastro', component: CadastroComponent },
+            { path: 'register', component: RegisterComponent },
             { path: 'login', component: LoginComponent }
         ]
     }
@@ -21,4 +21,4 @@ const contaRouterConfig: Routes = [
     ],
     exports: [RouterModule]
 })
-export class ContaRoutingModule { }
+export class AccountRoutingModule { }

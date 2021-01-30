@@ -4,16 +4,16 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ContaRoutingModule } from './conta.route';
+import { AccountRoutingModule } from './account.route';
 
-import { ContaAppComponent } from './conta.app.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { ContaAppComponent } from './account.app.component';
+import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     ContaAppComponent,
-    CadastroComponent,
+    RegisterComponent,
     LoginComponent],
   imports: [
     CommonModule,
@@ -21,7 +21,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ContaRoutingModule
+    AccountRoutingModule
   ]
 })
-export class ContaModule { }
+export class AccountModule { }
