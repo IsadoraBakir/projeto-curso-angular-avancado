@@ -27,4 +27,4 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         NotFoundComponent
     ]
 })
-export class NavegacaoModule{}
+export class NavegacaoModule { }
