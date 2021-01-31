@@ -7,6 +7,7 @@ import { ValidationMessages, GenericValidator, DisplayMessage } from './../../ut
 import { AccountService } from './../services/account.service';
 import { User } from './../models/user';
 import { Router } from '@angular/router';
+import { debug } from 'console';
 
 @Component({
   selector: 'app-register',
@@ -52,7 +53,7 @@ export class RegisterComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: [undefined, [Validators.required, this.matchValues('confirmPassword')]],
+      password: [undefined, [Validators.required]],
       confirmPassword: [undefined, [Validators.required, this.matchValues('password')]]
     });
   }

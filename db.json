@@ -17,6 +17,36 @@
       "password": "123123",
       "confirmPassword": "123123",
       "id": 3
+    },
+    {
+      "email": "isadora@email",
+      "password": "123123",
+      "confirmPassword": "123123",
+      "id": 4
+    },
+    {
+      "email": "isadora@email",
+      "password": "123123",
+      "confirmPassword": "123123",
+      "id": 5
+    },
+    {
+      "email": "isadora@email",
+      "password": "123123",
+      "confirmPassword": "123123",
+      "id": 6
+    },
+    {
+      "email": "isadora@email",
+      "password": "123123",
+      "confirmPassword": "123123",
+      "id": 7
+    },
+    {
+      "email": "isadora@isadora",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 8
     }
   ]
 }
