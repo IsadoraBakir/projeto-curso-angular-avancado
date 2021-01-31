@@ -10,6 +10,8 @@ import { ContaAppComponent } from './account.app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
+import { AccountService } from './services/account.service';
+
 @NgModule({
   declarations: [
     ContaAppComponent,
@@ -22,6 +24,9 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     HttpClientModule,
     AccountRoutingModule
+  ],
+  providers: [
+    AccountService
   ]
 })
 export class AccountModule { }

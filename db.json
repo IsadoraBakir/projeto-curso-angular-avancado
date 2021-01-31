@@ -1,0 +1,22 @@
+{
+  "new-account": [
+    {
+      "id": 1,
+      "email": "isadora@email.com",
+      "password": "123123",
+      "confirmPassword": "123123"
+    },
+    {
+      "email": "isadora@isadora.com",
+      "password": "123123",
+      "confirmPassword": "123123",
+      "id": 2
+    },
+    {
+      "email": "isadora@email.com",
+      "password": "123123",
+      "confirmPassword": "123123",
+      "id": 3
+    }
+  ]
+}
