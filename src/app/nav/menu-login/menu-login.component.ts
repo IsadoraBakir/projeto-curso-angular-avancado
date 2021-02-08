@@ -16,7 +16,7 @@ export class MenuLoginComponent {
   constructor(private router: Router) {  }
 
   loggedUser(): boolean {
-    this.token = this.localStorageUtils.getTokenUser();
+    this.token = this.localStorageUtils.getUserToken();
     this.user = this.localStorageUtils.getUser();
 
     if (this.user) {

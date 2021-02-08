@@ -1,13 +1,14 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChildren } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControlName, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { Observable, merge, Subscription, fromEvent } from 'rxjs';
+
+import { ToastrService } from 'ngx-toastr';
 
 import { ValidationMessages, GenericValidator, DisplayMessage } from './../../utils/generic-form-validation';
 import { AccountService } from './../services/account.service';
 import { User } from './../models/user';
-import { Router } from '@angular/router';
-import { debug } from 'console';
 
 @Component({
   selector: 'app-register',
@@ -20,16 +21,19 @@ export class RegisterComponent implements OnInit, AfterViewInit, OnDestroy {
   subscriptions: Subscription[] = [];
   errors: any[] = [];
   registerForm: FormGroup;
-  user: User;
+  user: User = new User();
 
   validationMessages: ValidationMessages;
   genericValidator: GenericValidator;
   displayMessage: DisplayMessage = {};
 
+  unsavedChanges: boolean;
+
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private accountService: AccountService) {
+    private accountService: AccountService,
+    private toastr: ToastrService) {
 
     this.validationMessages = {
       email: {
@@ -64,6 +68,7 @@ export class RegisterComponent implements OnInit, AfterViewInit, OnDestroy {
 
     merge(...controlBlurs).subscribe(() => {
       this.displayMessage = this.genericValidator.processMessages(this.registerForm);
+      this.unsavedChanges = true;
     });
   }
 
@@ -84,11 +89,12 @@ export class RegisterComponent implements OnInit, AfterViewInit, OnDestroy {
       this.user = Object.assign({}, this.user, this.registerForm.value);
       this.subscriptions.push(
         this.accountService.registerUser(this.user)
-          .subscribe(
-            success => { this.processSuccess(success); },
-            fail => { this.processFails(fail); }
-          )
+        .subscribe(
+          success => { this.processSuccess(success); },
+          fail => { this.processFails(fail); }
+        )
       );
+      this.unsavedChanges = false;
     }
   }
 
@@ -96,11 +102,15 @@ export class RegisterComponent implements OnInit, AfterViewInit, OnDestroy {
     this.registerForm.reset();
     this.errors = [];
     this.accountService.LocalStorage.saveLocalDataUser(response);
-    this.router.navigate(['/home']);
+    const toast = this.toastr.success('Registro realizado com sucesso!', 'Bem vindo!');
+    if (toast) {
+      this.router.navigate(['/home']);
+    }
   }
 
   processFails(fail: any) {
     this.errors = fail.error.errors;
+    this.toastr.error('Ocorreu um erro!', 'Opa :(');
   }
 
   ngOnDestroy(): void {

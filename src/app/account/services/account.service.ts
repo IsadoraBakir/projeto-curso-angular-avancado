@@ -9,20 +9,26 @@ import { BaseService } from 'src/app/services/base.service';
 @Injectable()
 export class AccountService extends BaseService {
 
-    constructor(private http: HttpClient) { super(); }
+  constructor(private http: HttpClient) { super(); }
 
-    registerUser(user: User): Observable<User> {
-      const response = this.http
-        .post(this.UrlServiceV1 + 'new-account', user, this.GetHeaderJson())
-        .pipe(
-          map(this.extractData),
-          catchError(this.serviceError)
-        );
-      return response;
-    }
+  registerUser(user: User): Observable<User> {
+    const response = this.http
+      .post(this.UrlServiceV1 + 'new-account', user, this.GetHeaderJson())
+      .pipe(
+        map(this.extractData),
+        catchError(this.serviceError)
+      );
+    return response;
+  }
 
-    login(user: User) {
-
-    }
+  login(user: User): Observable<User> {
+    const response = this.http
+      .post(this.UrlServiceV1 + 'login', user, this.GetHeaderJson())
+      .pipe(
+        map(this.extractData),
+        catchError(this.serviceError)
+      );
+    return response;
+  }
 
 }

@@ -6,7 +6,7 @@ export class LocalStorageUtils {
 
     public saveLocalDataUser(response: any) {
         this.saveTokenUser(response.accessToken);
-        this.saveUser(response.userToken);
+        this.saveUser(response);
     }
 
     public clearLocalDataUser() {
@@ -14,7 +14,7 @@ export class LocalStorageUtils {
         localStorage.removeItem('devio.user');
     }
 
-    public getTokenUser(): string {
+    public getUserToken(): string {
         return localStorage.getItem('devio.token');
     }
 

@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 import { AccountService } from './services/account.service';
+import { AccountGuard } from './services/account.guard';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AccountService } from './services/account.service';
     AccountRoutingModule
   ],
   providers: [
-    AccountService
+    AccountService,
+    AccountGuard
   ]
 })
 export class AccountModule { }
