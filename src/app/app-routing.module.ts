@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: () => import('./account/account.module')
       .then(m => m.AccountModule)
   },
+  {
+    path: 'suppliers',
+    loadChildren: () => import('./supplier/supplier.module')
+      .then(m => m.SupplierModule)
+  },
   { path: 'nao-encontrado', component: NotFoundComponent },
   { path: '**', component: NotFoundComponent }
 ];

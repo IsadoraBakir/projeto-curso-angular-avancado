@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
     selector: 'account-app-root',
     template: '<router-outlet></router-outlet>'
 })
-export class ContaAppComponent { }
+export class AccountAppComponent { }

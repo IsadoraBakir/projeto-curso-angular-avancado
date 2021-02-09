@@ -172,6 +172,13 @@
       "password": "123",
       "confirmPassword": "123",
       "id": 28
+    },
+    {
+      "accessToken": "QWSRffeRTgtrnHUJHGGFdddSWSSD",
+      "email": "isadora@email.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 29
     }
   ],
   "login": [
@@ -192,6 +199,44 @@
       "email": "isa@isa",
       "password": "123",
       "id": 3
+    }
+  ],
+  "suppliers": [
+    {
+      "id": 1,
+      "name": "Lojinha Da Esquina",
+      "document": "string",
+      "active": true,
+      "supplierType": 1,
+      "address": {
+        "id": "string",
+        "logradouro": "string",
+        "numero": "string",
+        "complemento": "string",
+        "bairro": "string",
+        "cep": "string",
+        "cidade": "string",
+        "estado": "string",
+        "fornecedorId": "string"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Eletro Eletrônicos",
+      "document": "string",
+      "active": true,
+      "supplierType": 1,
+      "address": {
+        "id": "string",
+        "logradouro": "string",
+        "numero": "string",
+        "complemento": "string",
+        "bairro": "string",
+        "cep": "string",
+        "cidade": "string",
+        "estado": "string",
+        "fornecedorId": "string"
+      }
     }
   ]
 }
